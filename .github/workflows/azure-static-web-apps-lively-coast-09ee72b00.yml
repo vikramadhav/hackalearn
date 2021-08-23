@@ -35,7 +35,7 @@ jobs:
         run: |
           npm i
           npm run build --prod
-        working-directory: .
+        working-directory: ./bootcamp
 
       - name: Deploy
         id: builddeploy
