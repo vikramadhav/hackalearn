@@ -35,7 +35,7 @@ jobs:
         run: |
           npm i
           npm run build --prod
-        working-directory: ./bootcamp
+        working-directory: .
 
       - name: Deploy
         id: builddeploy
@@ -44,9 +44,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LIVELY_COAST_09EE72B00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "./bootcamp/dist/*"
-          api_location: ""
-          output_location: ""
+          app_location: "/"
+          api_location: "api"
+          output_location: "dist/hackalearn"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
